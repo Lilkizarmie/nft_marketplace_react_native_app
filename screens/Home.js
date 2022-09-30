@@ -1,9 +1,14 @@
 import { useState } from 'react'
-import { Text } from 'react-native'
+import { View, SafeArea, FlatList, Text } from 'react-native';
+
+import { COLORS, NFTData } from '../constants';
+import { NFTData, HomeHeader, FocusedStatusBar } from '../components';
 
 const Home = () => {
   return (
-    <Text>Home</Text>
+    <SafeAreaView style={{ flex: ! }}>
+
+    </SafeAreaView>
   )
 }
 
