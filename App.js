@@ -1,8 +1,11 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import { useFonts } from '/expo-font';
+import { useFonts } from 'expo-font';
 
-const Stack = createStackNavigatior();
+import Home from './screens/Home';
+import Details from './screens/Details';
+
+const Stack = createStackNavigator();
 
 const theme = {
   ...DefaultTheme,
@@ -13,13 +16,19 @@ const theme = {
 }
 
 const App = () => {
+  const [loaded] = useFonts({
+    InterBold: require("./assets/fonts/Inter-Bold.ttf"),
+    InterSemiBols: require("./assets/fonts/Inter-SemiBold.ttf"),
+    
+  })
+
   return (
-    <NavigtionContainer theme={theme}>
+    <NavigationContainer theme={theme}>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Details" component={Details} />
       </Stack.Navigator>
-    </NavigtionContainer>
+    </NavigationContainer>
   );
 }
 
